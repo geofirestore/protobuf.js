@@ -232,7 +232,7 @@ Root.prototype.load = function load(filename, options, callback) {
  * @throws {Error} If synchronous fetching is not supported (i.e. in browsers) or if a file's syntax is invalid
  */
 Root.prototype.loadSync = function loadSync(filename, options) {
-    if (!util.isNode)
+    if (!util.global)
         throw Error("not supported");
     return this.load(filename, options, SYNC);
 };
